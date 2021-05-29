@@ -5,8 +5,12 @@ class RevealingReferences
 
   def diameters
     wheels.collect do |wheel|
-      wheel.rim + (wheel.tire * 2)
+      diameter(wheel)
     end
+  end
+
+  def diameter(wheel)
+    wheel.rim + (wheel.tire * 2)
   end
 
   private
