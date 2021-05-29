@@ -1,6 +1,4 @@
 class Gear
-  attr_reader :chainring, :cog, :rim, :tire
-
   def initialize(chainring, cog, rim, tire)
     @chainring = chainring
     @cog = cog
@@ -15,4 +13,8 @@ class Gear
   def gear_inches
     ratio * (rim + tire * 2)
   end
+
+  private
+
+  attr_reader :chainring, :cog, :rim, :tire
 end
