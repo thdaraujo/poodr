@@ -1,9 +1,9 @@
 module Poodr
   class Gear
-    def initialize(chainring, cog, rim, tire)
+    def initialize(chainring, cog, wheel = nil)
       @chainring = chainring
       @cog = cog
-      @wheel = Wheel.new(rim, tire)
+      @wheel = wheel
     end
 
     def ratio
@@ -15,15 +15,6 @@ module Poodr
     end
 
     private
-
-    # allows the behaviour to be explicit
-    # but defers the design decision for later:
-    # extracting or not extracting the wheel class
-    Wheel = Struct.new(:rim, :tire) do
-      def diameter
-        (rim + tire * 2)
-      end
-    end
 
     attr_reader :chainring, :cog, :wheel
   end

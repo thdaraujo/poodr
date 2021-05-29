@@ -7,3 +7,4 @@ end
 
 require "poodr/gear"
 require "poodr/revealing_references"
+require "poodr/wheel"
